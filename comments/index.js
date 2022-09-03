@@ -38,7 +38,7 @@ app.post("/posts/:id/comments", async (req, res) => {
 app.post("/events", (req, res) => {
   const event = req.body;
   console.log("received event", event);
-  res.send(posts);
+  res.send({});
 });
 
 app.listen(4001, () => {
