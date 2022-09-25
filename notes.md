@@ -20,4 +20,7 @@ There are couple of challenges : <br>
 - We have to allocate the ports and we will need to change the code of other services like event-bus.
 - If we have second virtual machine, then event-bus need to figure out how to reach out to this other virtual machine.
 - Let our website is active for only some time. Like on holidays.. . Then how to save hosting money.
-- 
+
+
+## Resources 
+- https://qdmana.com/2022/04/202204162318033142.html
