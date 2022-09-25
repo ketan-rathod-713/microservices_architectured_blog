@@ -15,4 +15,4 @@ spec:
     spec: 
       containers:
         - name: posts
-          image: ketan/posts/0.0.1
+          image: ketanrtd1/posts
