@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moderation-depl
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: moderation
+  template:
+    metadata:
+      labels:
+        app: moderation
+    spec: 
+      containers:
+        - name: moderation
+          image: ketanrtd1/moderation
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: moderation-srv # This is the name that is going to used by others to refer this depl or pods or containers of it.
+spec:
+  selector:
+    app: moderation # name of the app where we want to redirect to or expose to other
+  type: ClusterIP # optional by default kubernetes will make it clusterip
+  ports:
+    - name: moderation
+      protocol: TCP
+      port: 4003
+      targetPort: 4003

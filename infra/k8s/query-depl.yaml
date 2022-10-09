@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: query-depl
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: query
+  template:
+    metadata:
+      labels:
+        app: query
+    spec: 
+      containers:
+        - name: query
+          image: ketanrtd1/query
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: query-srv # This is the name that is going to used by others to refer this depl or pods or containers of it.
+spec:
+  selector:
+    app: query # name of the app where we want to redirect to or expose to other
+  type: ClusterIP # optional by default kubernetes will make it clusterip
+  ports:
+    - name: query
+      protocol: TCP
+      port: 4002
+      targetPort: 4002

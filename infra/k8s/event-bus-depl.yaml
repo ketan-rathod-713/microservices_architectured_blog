@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: event-bus-srv
+  name: event-bus-srv # This is the name that is going to used by others to refer this depl or pods or containers of it.
 spec:
   selector:
     app: event-bus # name of the app where we want to redirect to or expose to other
