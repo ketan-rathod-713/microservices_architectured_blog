@@ -24,3 +24,4 @@ There are couple of challenges : <br>
 
 ## Resources 
 - https://qdmana.com/2022/04/202204162318033142.html
+- kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.3.1/deploy/static/provider/cloud/deploy.yaml
