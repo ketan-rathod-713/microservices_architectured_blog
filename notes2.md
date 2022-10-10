@@ -166,3 +166,17 @@ We use deployments because we can update the version of image and differnt pods.
 #### Networking with services
 
 - Services provides networking between pods
+
+
+####
+
+Load balancer is very special thing. 
+Load Balancer is just sends request to one pod. It is the single point entry for our cluster.
+Ingress controller is the one which handles routing for all the deployments/pods of our cluster.
+
+Sending request to some cluster ip service ( not pod directly in technical sense ).
+
+Here we are using ingress-nginx not using the kubernetes-ingress.
+
+
+
