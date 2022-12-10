@@ -7,7 +7,7 @@ export default function PostCreate() {
   const onSubmit = async (event) => {
     event.preventDefault(); // prevennt default action by browser
 
-    await axios.post("http://localhost:4000/posts", {
+    await axios.post("http://posts.com/posts/create", { // here we are requesting to the load balancer ingress nginx, we also need to make cluster ip service so that it can redirect request to this pod and so that we can server html css and js
       title,
     });
 

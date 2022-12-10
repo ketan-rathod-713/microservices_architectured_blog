@@ -6,10 +6,10 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: posts.com
+    - host: posts.com # this should be in host file , react will do request to the post.com url 
       http:
         paths:
-          - path: /posts
+          - path: /posts/create
             pathType: Prefix
             backend:
               service:

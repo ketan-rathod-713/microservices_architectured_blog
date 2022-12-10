@@ -14,7 +14,7 @@ app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.post("/posts", async (req, res) => {
+app.post("/posts/create", async (req, res) => {
   const { title } = req.body;
   const id = randomBytes(4).toString("hex");
   posts[id] = {
@@ -41,6 +41,6 @@ app.post("/events", (req, res) => {
 
 app.listen(4000, () => {
   console.log("once more")
-  console.log("This is the change thhat i am doing version 2.0");
+  console.log("This is the change thhat i am doing version 3.0");
   console.log("started on port 4000");
 });

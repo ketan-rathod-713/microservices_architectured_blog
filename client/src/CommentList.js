@@ -6,7 +6,7 @@ export default function CommentList({ comments }) {
 
   // const fetchData = async () => {
   //   const res = await axios.get(
-  //     `http://localhost:4001/posts/${postId}/comments`
+  //     `http://posts.com/posts/${postId}/comments`
   //   );
   //   console.log(res.data);
 

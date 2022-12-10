@@ -62,6 +62,7 @@ app.post("/events", (req, res) => {
 app.listen(4002, async () => {
   console.log("server is listening on port 4002 ");
 
+  // each time it restarts or crash it will manage to get this done atleast wow fantastic
   const res = await axios.get("http://event-bus-srv:4005/events");
 
   for (let event of res.data) {

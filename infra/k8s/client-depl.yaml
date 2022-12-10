@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-depl
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: client
+  template:
+    metadata:
+      labels:
+        app: client
+    spec: 
+      containers:
+        - name: client
+          image: ketanrtd1/client # push this image to docker hub to access it
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-srv # This is the name that is going to used by others to refer this depl or pods or containers of it.
+spec:
+  selector:
+    app: client # name of the app where we want to redirect to or expose to other
+  type: ClusterIP # optional by default kubernetes will make it clusterip
+  ports:
+    - name: client
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+
+---
+# node port for client side 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-srv
+spec:
+  type: NodePort
+  selector: 
+    app: client # service for posts, which pods to expose , just like class names 
+  ports:  # all the ports to set on the target port
+    - name: client # here name can be anything just for logging purposes
+      protocol: TCP
+      port: 3000
+      targetPort: 3000 #that's where we ultimately want to send traffic
